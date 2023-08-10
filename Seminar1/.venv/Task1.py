@@ -29,9 +29,17 @@
 # Данные о студентах должны быть переданы в шаблон через
 # контекст.
 
+# Задание №7
+# Написать функцию, которая будет выводить на экран HTML
+# страницу с блоками новостей.
+# Каждый блок должен содержать заголовок новости,
+# краткое описание и дату публикации.
+# Данные о новостях должны быть переданы в шаблон через
+# контекст.
 
 
 from flask import Flask, render_template
+import datetime
 
 app = Flask(__name__)
 
@@ -46,6 +54,11 @@ students = [
     {'name': 'Ярослав', 'surname': 'Блинов', 'age': 8, 'score': 5},
     {'name': 'Святослав', 'surname': 'Блинов', 'age': 3, 'score': 5}
 ]
+
+date_ = datetime.datetime.now
+news = [{'title': 'Важная новость', 'description': 'В Черном море обнаружен ротавирус', 'date': '01.08.23'},
+        {'title': 'Супер Важная новость', 'description': 'В Черном море снова обнаружен ротавирус', 'date': '10.08.23'}]
+
 
 @app.route('/')
 def hello_world():
@@ -72,14 +85,19 @@ def get_str_length(my_str):
     return f'длина строки = {len(my_str)}'
 
 
+@app.route('/text/')
+def text():
+    return html
+
+
 @app.route('/study/')
 def study():
     return render_template('students.html', students = students)
     
     
-@app.route('/text/')
-def text():
-    return html
+@app.route('/news/')
+def news_():
+    return render_template('news.html', news = news)
 
 #flask --app Task1.py run
 

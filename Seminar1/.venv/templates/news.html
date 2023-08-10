@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <h1 class="col-12 text-monospace text-center">Новости</h1>
+        {% for new in news %}
+        <div class="col-12 col-md-6 col-lg-4">
+          <h2>{{ new.title }}</h2>
+          <p>{{ new.description }}</p>
+          <p>{{ new.date }}</p>
+        </div>
+        {% endfor %}
+        </div>    
+</body>
+</html>
