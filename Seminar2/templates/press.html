@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Старт</title>
+</head>
+<body>
+  <div>
+    <a href="{{ url_for('hello1') }}">
+      <button type="submit">
+        "Нажми меня"
+      </button>
+    </a>  
+
+    <a href="{{ url_for('upload') }}">
+      <button type="submit">
+        "Изображение"
+      </button>
+    </a> 
+
+    <a href="{{ url_for('login') }}">
+      <button type="submit">
+        "Вход"
+      </button>
+    </a> 
+
+    <a href="{{ url_for('enter') }}">
+      <button type="submit">
+        "Ввод"
+      </button>
+    </a>
+
+    <a href="{{ url_for('calc') }}">
+      <button type="submit">
+        "Калькулятор"
+      </button>
+    </a>
+
+  </div> 
+</body>
+</html>
